@@ -55,7 +55,7 @@ describe("/", () => {
 });
 
 describe("/", () => {
-  it("can get correctly", (done) => {
+  it("can post correctly", (done) => {
      request
       .post("/graphql")
       .send({
@@ -85,7 +85,7 @@ describe("/", () => {
 });
 
 describe("/", () => {
-  it("can get correctly", (done) => {
+  it("can post correctly", (done) => {
     request
       .post("/graphql")
       .send({
@@ -110,7 +110,7 @@ describe("/", () => {
 });
 
 describe("/", () => {
-  it("can get correctly", (done) => {
+  it("can post correctly", (done) => {
      request
       .post("/graphql")
       .send({
