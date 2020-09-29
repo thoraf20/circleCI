@@ -78,7 +78,7 @@ describe("/", function () {
     });
 });
 describe("/", function () {
-    it("can get correctly", function (done) {
+    it("can post correctly", function (done) {
         request
             .post("/graphql")
             .send({
@@ -92,7 +92,7 @@ describe("/", function () {
     });
 });
 describe("/", function () {
-    it("can get correctly", function (done) {
+    it("can post correctly", function (done) {
         request
             .post("/graphql")
             .send({
@@ -106,14 +106,14 @@ describe("/", function () {
     });
 });
 describe("/", function () {
-    it("can get correctly", function (done) {
+    it("can post correctly", function (done) {
         request
             .post("/graphql")
             .send({
             query: "\n      mutation{\n        deleteOrganization(id:\"5f60cdc576fd80bb110af5a3\"){\n          country\n        }\n      }  \n      ",
         })
             .then(function (res) {
-            // console.log(res.text);
+            console.log(res.text);
             expect(res.status).toBe(200);
         });
         done();
