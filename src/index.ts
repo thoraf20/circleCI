@@ -16,6 +16,9 @@ import {
   GraphQLFloat,
   GraphQLInt,
 } from "graphql";
+  
+
+
 
 
 mongoose.connect("mongodb+srv://physicist1:physicist1@cluster0.uvzxt.mongodb.net/thoraf", {
@@ -24,7 +27,7 @@ mongoose.connect("mongodb+srv://physicist1:physicist1@cluster0.uvzxt.mongodb.net
     useFindAndModify: false,
   }).then(() => console.log("Mongoose connected to the server successfuly....."))
   .catch(err => console.log(err))
-  
+
 
 // Provide resolver functions for your schema fields
 const resolvers = {
@@ -165,13 +168,13 @@ const schema1 = new GraphQLSchema({
   mutation: mutation,
 });
 
-app.use('/user', userRouter);
+// app.use('/user', userRouter);
 app.use(
   "/graphql",
   graphqlHTTP({
     schema: schema1,
-    graphiql: true,
     rootValue: resolvers,
+    graphiql: true,
   })
 );
 

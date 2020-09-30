@@ -40,24 +40,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
+var mongoose_1 = __importDefault(require("mongoose"));
 var express_graphql_1 = require("express-graphql");
 var body_parser_1 = __importDefault(require("body-parser"));
 var database_1 = require("./database");
 var schema1_1 = __importDefault(require("./schema1"));
-var regAuth_1 = __importDefault(require("./regAuth"));
 var graphql_1 = require("graphql");
-// async function test () {
-//   await mongoose.connect("mongodb+srv://physicist1:physicist1@cluster0.uvzxt.mongodb.net/test", {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: false,
-//     useFindAndModify: false,
-//   }, (err) => {
-//     if (!err) {
-//       console.log('success')
-//     }
-//   });
-// }
-// test();
+mongoose_1.default.connect("mongodb+srv://physicist1:physicist1@cluster0.uvzxt.mongodb.net/thoraf", {
+    useNewUrlParser: true,
+    useUnifiedTopology: false,
+    useFindAndModify: false,
+}).then(function () { return console.log("Mongoose connected to the server successfuly....."); })
+    .catch(function (err) { return console.log(err); });
 // Provide resolver functions for your schema fields
 var resolvers = {
     hello: function () { return "Hello world!"; },
@@ -201,10 +195,10 @@ var schema1 = new graphql_1.GraphQLSchema({
     query: Query,
     mutation: mutation,
 });
-app.use('/user', regAuth_1.default);
+// app.use('/user', userRouter);
 app.use("/graphql", express_graphql_1.graphqlHTTP({
     schema: schema1,
-    graphiql: true,
     rootValue: resolvers,
+    graphiql: true,
 }));
 exports.default = app;

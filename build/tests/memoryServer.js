@@ -67,7 +67,7 @@ var connect = function () { return __awaiter(void 0, void 0, void 0, function ()
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                uri = "mongodb://localhost/week-9";
+                uri = "mongodb+srv://physicist1:<password>@cluster0.uvzxt.mongodb.net/test";
                 options = {
                     useNewUrlParser: true,
                     useFindAndModify: false,
