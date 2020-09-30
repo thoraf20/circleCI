@@ -183,8 +183,8 @@ app.use(
 );
 
 
-// let PORT = process.env.PORT|| 4000;
-// app.listen(PORT);
-// console.log(`🚀 Server ready at http://localhost:4000/graphql`);
+// let MY_PORT = process.env.PORT|| 4000;
+// app.listen(MY_PORT);
+// console.log(`🚀 Server ready at ${MY_PORT}`);
 
 export default app;

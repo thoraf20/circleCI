@@ -1,10 +1,15 @@
 import mongoose from "mongoose";
 import * as Schemas from "../database";
 import { MongoMemoryServer } from "mongodb-memory-server";
+import {config} from 'dotenv';
 const mongod = new MongoMemoryServer();
 
+
+config();
+// const uri = process.env.MONGO_URI;
+
 const connect = async () => {
-  const uri = "mongodb://localhost/week-9";
+  const uri = process.env.MONGO_URI;
   const options = {
     useNewUrlParser: true,
     useFindAndModify: false,
@@ -12,8 +17,22 @@ const connect = async () => {
     useCreateIndex: true,
   };
 
-  await mongoose.connect(uri, options);
+  // await mongoose.connect(uri, options);
 };
+
+// const connect = async (uri, {
+//   useNewUrlParser: true,
+//     useFindAndModify: false,
+//      useUnifiedTopology: false,
+//     useCreateIndex: true,
+// })
+//   .then(() => {
+//       console.log('Connection estabislished with MongoDB');
+//   })
+//   .catch(error => console.error(error.message));
+// }
+
+
 
 const closeDb = async () => {
   await mongoose.connection.dropDatabase();
