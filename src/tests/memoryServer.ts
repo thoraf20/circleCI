@@ -4,7 +4,7 @@ import { MongoMemoryServer } from "mongodb-memory-server";
 const mongod = new MongoMemoryServer();
 
 const connect = async () => {
-  const uri = "mongodb://localhost/week-9";
+  const uri = "mongodb+srv://physicist1:<password>@cluster0.uvzxt.mongodb.net/test";
   const options = {
     useNewUrlParser: true,
     useFindAndModify: false,
