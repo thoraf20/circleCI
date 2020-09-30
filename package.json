@@ -4,7 +4,7 @@
   "description": "### 1. Convert your rest API from week 8 task into GraphQL",
   "main": "build/index.js",
   "scripts": {
-    "start": "nodemon ./build/index.js",
+    "start": "nodemon ./build/home.js",
     "test" : "jest --detectOpenHandles --verbose --forceExit --maxWorkers=1 ./build/tests/graph.test.js"
   },
   "repository": {

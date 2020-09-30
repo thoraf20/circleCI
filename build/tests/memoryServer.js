@@ -61,34 +61,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var mongoose_1 = __importDefault(require("mongoose"));
 var Schemas = __importStar(require("../database"));
 var mongodb_memory_server_1 = require("mongodb-memory-server");
-var dotenv_1 = require("dotenv");
 var mongod = new mongodb_memory_server_1.MongoMemoryServer();
-dotenv_1.config();
-// const uri = process.env.MONGO_URI;
 var connect = function () { return __awaiter(void 0, void 0, void 0, function () {
     var uri, options;
     return __generator(this, function (_a) {
-        uri = process.env.MONGO_URI;
-        options = {
-            useNewUrlParser: true,
-            useFindAndModify: false,
-            useUnifiedTopology: false,
-            useCreateIndex: true,
-        };
-        return [2 /*return*/];
+        switch (_a.label) {
+            case 0:
+                uri = "mongodb://localhost/week-9";
+                options = {
+                    useNewUrlParser: true,
+                    useFindAndModify: false,
+                    useUnifiedTopology: false,
+                    useCreateIndex: true,
+                };
+                return [4 /*yield*/, mongoose_1.default.connect(uri, options)];
+            case 1:
+                _a.sent();
+                return [2 /*return*/];
+        }
     });
 }); };
-// const connect = async (uri, {
-//   useNewUrlParser: true,
-//     useFindAndModify: false,
-//      useUnifiedTopology: false,
-//     useCreateIndex: true,
-// })
-//   .then(() => {
-//       console.log('Connection estabislished with MongoDB');
-//   })
-//   .catch(error => console.error(error.message));
-// }
 var closeDb = function () { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {

@@ -207,7 +207,4 @@ app.use("/graphql", express_graphql_1.graphqlHTTP({
     graphiql: true,
     rootValue: resolvers,
 }));
-// let MY_PORT = process.env.PORT|| 4000;
-// app.listen(MY_PORT);
-// console.log(`🚀 Server ready at ${MY_PORT}`);
 exports.default = app;
